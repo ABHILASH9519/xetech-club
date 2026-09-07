@@ -1,0 +1,88 @@
+import type { RoadmapStep } from '../types';
+
+export const ROADMAP_STEPS: RoadmapStep[] = [
+  {
+    step: '01',
+    title: 'Fundamentals',
+    subtitle: 'Learn Core Systems & Terminal Fluency',
+    description: 'Build an unshakable foundation in Linux kernel concepts, bash scripting, computer networking (TCP/IP, DNS, HTTP/3), and Git collaboration workflows.',
+    milestones: [
+      'Linux command line, process management & systemd',
+      'Networking protocols, reverse proxies & SSL/TLS certificates',
+      'Git branching strategies, conventional commits & pull requests',
+      'Core programming paradigms in Python, Go, and Shell',
+    ],
+    tools: ['Linux', 'Bash', 'Git', 'Neovim', 'Python', 'Curl'],
+    outcomes: 'Ability to navigate any Unix server and write clean, automated command-line workflows.',
+  },
+  {
+    step: '02',
+    title: 'Hands-on Labs',
+    subtitle: 'Containerization & Microservices',
+    description: 'Transition from single-machine scripts to portable containerized environments. Package microservices, master volume mounts, and orchestrate with Docker Compose.',
+    milestones: [
+      'Multi-stage Dockerfiles with minimal attack surfaces',
+      'Container networking, bridge interfaces & port mapping',
+      'Multi-container composition with Docker Compose',
+      'Local development environments with live reload',
+    ],
+    tools: ['Docker', 'Docker Compose', 'PostgreSQL', 'Redis', 'Nginx'],
+    outcomes: 'Produce production-ready container images with fast builds and isolated environments.',
+  },
+  {
+    step: '03',
+    title: 'Projects',
+    subtitle: 'Build Real-World Applications',
+    description: 'Work in agile student squads to build scalable full-stack applications, event-driven backends, and modular microservices ready for cloud deployment.',
+    milestones: [
+      'RESTful and gRPC microservice architectures',
+      'Stateless authentication with JWT & OAuth 2.0',
+      'Distributed caching strategies and background worker queues',
+      'Automated unit, integration, and linting test suites',
+    ],
+    tools: ['FastAPI', 'Node.js', 'Go', 'RabbitMQ', 'PostgreSQL', 'GitHub'],
+    outcomes: 'A completed, fully tested multi-tier application ready for continuous delivery.',
+  },
+  {
+    step: '04',
+    title: 'Cloud Deployment',
+    subtitle: 'Deploy to Hyperscale Infrastructure',
+    description: 'Provision compute, managed databases, and object stores on AWS and GCP. Deploy applications to managed Kubernetes clusters with ingress routing.',
+    milestones: [
+      'Cloud VPC architectures with public and private subnets',
+      'Kubernetes Deployments, Services, ConfigMaps & Secrets',
+      'Ingress Controllers, cert-manager & automated HTTPS',
+      'Managed Cloud Databases (RDS, Cloud SQL) & S3 storage',
+    ],
+    tools: ['AWS', 'GCP', 'Kubernetes', 'Helm', 'Cloudflare', 'EKS'],
+    outcomes: 'Live, publicly accessible production application with high availability and SSL encryption.',
+  },
+  {
+    step: '05',
+    title: 'Automation',
+    subtitle: 'Continuous Integration & Infrastructure as Code',
+    description: 'Codify every operational step. Write declarative Terraform scripts, configure automated CI/CD pipelines, and implement GitOps pull synchronization.',
+    milestones: [
+      'Continuous Integration pipelines with GitHub Actions & Jenkins',
+      'Modular Infrastructure as Code with Terraform and state locking',
+      'Declarative GitOps deployments using ArgoCD',
+      'Automated vulnerability scanning with Trivy & Snyk',
+    ],
+    tools: ['Terraform', 'GitHub Actions', 'Jenkins', 'ArgoCD', 'Ansible'],
+    outcomes: 'Zero-touch automated deployment pipeline from code commit to production cluster.',
+  },
+  {
+    step: '06',
+    title: 'Innovation & AIOps',
+    subtitle: 'Agentic Systems, Observability & Scale',
+    description: 'Incorporate autonomous AI agents, dynamic telemetry, distributed tracing, and self-healing systems for resilient operations at university and enterprise scale.',
+    milestones: [
+      'Full-stack distributed tracing with OpenTelemetry & Grafana',
+      'Multi-agent LLM systems for automated incident triage',
+      'Horizontal Pod Autoscaling (HPA) and predictive load shedding',
+      'Contributing to open source cloud native ecosystems',
+    ],
+    tools: ['Prometheus', 'Grafana', 'OpenTelemetry', 'LangChain', 'LlamaIndex', 'K8s CRDs'],
+    outcomes: 'Self-monitoring, intelligent platform engineering solutions and open-source contributions.',
+  },
+];

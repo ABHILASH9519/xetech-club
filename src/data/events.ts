@@ -1,0 +1,96 @@
+import type { ClubEvent } from '../types';
+
+export const FEATURED_EVENT: ClubEvent = {
+  id: 'cloudforge-2026',
+  title: 'CloudForge: Zero-to-Production Cloud & DevOps Masterclass',
+  type: 'Workshop',
+  date: 'March 28, 2026',
+  time: '10:00 AM – 4:30 PM IST',
+  venue: 'Innovation Tech Lab 402 & Live Virtual Cloud Sandbox',
+  status: 'Registration Open',
+  featured: true,
+  registrationOpen: true,
+  description: 'An intensive, hands-on production workshop designed to take students through the entire modern software delivery lifecycle. Every attendee receives dedicated cloud credits, launches real containerized services, builds CI/CD pipelines, and deploys to a live Kubernetes cluster.',
+  pipeline: [
+    'Cloud',
+    'Linux',
+    'Git',
+    'GitHub',
+    'Docker',
+    'CI/CD',
+    'Jenkins',
+    'Kubernetes'
+  ],
+  tags: ['Hands-on Sandbox', 'Cloud Credits Provided', 'Digital Credential', 'Open to All Branches'],
+  speaker: {
+    role: '[Guest Cloud Architect & XeTech Alumni]',
+    organization: 'Enterprise Cloud Infrastructure Group',
+  },
+};
+
+export const OTHER_EVENTS: ClubEvent[] = [
+  {
+    id: 'agentic-hackathon',
+    title: 'Agentic Hack 2026: Multi-Agent Systems Challenge',
+    type: 'Hackathon',
+    date: 'April 18-19, 2026',
+    time: '36 Hours Non-Stop',
+    venue: 'Campus Auditorium & Discord Server',
+    status: 'Upcoming',
+    registrationOpen: true,
+    description: 'Build autonomous agent workflows, tool-using LLMs, and self-healing systems. Compete in teams of 2–4 with API compute sponsored by XeTech partner grants.',
+    tags: ['Agentic AI', 'Autonomous Swarms', 'Cash Prizes', 'Mentorship'],
+    speaker: {
+      role: '[AI Research Mentor]',
+      organization: 'XeTech AI Focus Group',
+    },
+  },
+  {
+    id: 'kubecraft-summit',
+    title: 'KubeCraft: Production Kubernetes at Scale',
+    type: 'Masterclass',
+    date: 'April 04, 2026',
+    time: '2:00 PM – 5:30 PM IST',
+    venue: 'Computer Center Seminar Hall',
+    status: 'Registration Open',
+    registrationOpen: true,
+    description: 'Deep dive into Kubernetes architecture: ingress controllers, stateful sets, custom resource definitions (CRDs), Helm charts, and cluster network policies.',
+    tags: ['DevOps', 'Kubernetes', 'Live Cluster Lab', 'Intermediate'],
+    speaker: {
+      role: '[DevOps Engineering Lead]',
+      organization: 'XeTech Core Platform Team',
+    },
+  },
+  {
+    id: 'aiops-observability',
+    title: 'Observability Unveiled: Prometheus & Grafana in Action',
+    type: 'Workshop',
+    date: 'February 21, 2026',
+    time: '3:00 PM – 6:00 PM IST',
+    venue: 'Lab 305 / Online Stream',
+    status: 'Completed',
+    registrationOpen: false,
+    description: 'Configured end-to-end telemetry pipelines, instrumented Node/Go microservices with OpenTelemetry, and designed production-grade Grafana executive dashboards.',
+    tags: ['AIOps', 'Observability', 'Recording Available', '140+ Attendees'],
+    speaker: {
+      role: '[Student Technical Mentor]',
+      organization: 'XeTech Club',
+    },
+  },
+  {
+    id: 'terraform-bootcamp',
+    title: 'Terraform Zero-to-Hero: Infrastructure as Code',
+    type: 'Bootcamp',
+    date: 'January 17, 2026',
+    time: '11:00 AM – 3:30 PM IST',
+    venue: 'Virtual Cloud Lab',
+    status: 'Completed',
+    registrationOpen: false,
+    description: 'Students declared modular cloud architectures using HashiCorp Terraform, mastered remote state locking with DynamoDB, and automated drift detection via CI.',
+    tags: ['IaC', 'Terraform', 'Completed', 'GitHub Templates'],
+    speaker: {
+      role: '[Automation Lead]',
+      organization: 'XeTech Club',
+    },
+  },
+];

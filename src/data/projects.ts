@@ -1,0 +1,118 @@
+import type { Project } from '../types';
+
+export const PROJECTS: Project[] = [
+  {
+    id: 'kubepulse',
+    title: 'KubePulse',
+    category: 'DevOps',
+    tagline: 'Autonomous multi-cluster health analyzer and remediation operator',
+    problem: 'University compute clusters suffered from silent memory leaks, resource starvation, and untracked crash loops during heavy exam hackathons.',
+    solution: 'Built a lightweight Go-based Kubernetes operator that monitors cluster telemetry, isolates failing pods, and triggers proactive horizontal scaling before node eviction occurs.',
+    architecture: [
+      'Custom Kubernetes Operator written in Go',
+      'Prometheus custom metrics exporter',
+      'Dynamic Webhook Admission Controller',
+      'Discord / Slack alert dispatcher with remediation action buttons'
+    ],
+    techStack: ['Go', 'Kubernetes', 'Prometheus', 'Docker', 'Helm', 'Grafana'],
+    githubUrl: 'https://github.com/xetech-club/kubepulse',
+    demoUrl: 'https://kubepulse-demo.xetech.dev',
+    metrics: 'Reduced student pod failure rate by 82% across 14 university lab clusters.',
+    featured: true,
+  },
+  {
+    id: 'agentic-ops',
+    title: 'AgenticOps',
+    category: 'AI',
+    tagline: 'Self-healing CI/CD pipeline powered by multi-agent LLM diagnostics',
+    problem: 'Developers spent an average of 45 minutes manually sifting through cryptic compiler and container build failure logs on GitHub Actions.',
+    solution: 'Created an autonomous GitHub Actions agent that intercepts failed workflows, retrieves relevant code snippets, diagnoses root cause, and submits a proposed fix directly as a draft PR.',
+    architecture: [
+      'ReAct loop orchestrator with tool-calling capabilities',
+      'AST-aware code repository parser and vector store',
+      'GitHub REST & GraphQL API bot integration',
+      'Sandboxed ephemeral container verification tester'
+    ],
+    techStack: ['Python', 'LangChain', 'OpenAI / Gemini API', 'GitHub Actions', 'Docker', 'FastAPI'],
+    githubUrl: 'https://github.com/xetech-club/agentic-ops',
+    demoUrl: 'https://agenticops.xetech.dev',
+    metrics: 'Resolved 340+ build breakages automatically with a 78% developer acceptance rate.',
+    featured: true,
+  },
+  {
+    id: 'cloudmesh',
+    title: 'CloudMesh',
+    category: 'Cloud',
+    tagline: 'Multi-tenant self-service student AWS cloud sandbox portal',
+    problem: 'Individual student AWS accounts led to accidental billing overruns, uncleaned resources, and security misconfigurations.',
+    solution: 'Engineered a unified student portal backed by AWS Organizations that provisions ephemeral, budget-capped cloud sandboxes with automated 48-hour garbage collection.',
+    architecture: [
+      'Next.js & Tailwind CSS student self-service portal',
+      'AWS Lambda & EventBridge lifecycle automation engine',
+      'AWS IAM permission boundary enforcer with zero egress costs',
+      'DynamoDB audit and usage accounting ledger'
+    ],
+    techStack: ['AWS Lambda', 'Terraform', 'TypeScript', 'DynamoDB', 'Cognito', 'Next.js'],
+    githubUrl: 'https://github.com/xetech-club/cloudmesh',
+    demoUrl: 'https://cloudmesh.xetech.dev',
+    metrics: 'Saved $4,200/semester in unused cloud resources while serving 400+ student lab sessions.',
+    featured: true,
+  },
+  {
+    id: 'infrabot',
+    title: 'InfraBot',
+    category: 'Automation',
+    tagline: 'ChatOps bot for instant ephemeral staging environments',
+    problem: 'Project teams had to wait for manual DevOps assistance to create preview environments for semester capstone presentations.',
+    solution: 'Developed a ChatOps bot enabling developers to trigger complete preview environments by commenting `/preview create` on GitHub pull requests or Discord channels.',
+    architecture: [
+      'Discord Bot gateway with Slash Commands & Role-Based Access',
+      'HashiCorp Terraform cloud agent runner',
+      'Cloudflare DNS automated subdomain allocator (*.preview.xetech.dev)',
+      'Automated teardown timer triggered on PR merge or close'
+    ],
+    techStack: ['Python', 'Terraform', 'Discord.py', 'Cloudflare API', 'Docker Compose'],
+    githubUrl: 'https://github.com/xetech-club/infrabot',
+    demoUrl: 'https://github.com/xetech-club/infrabot',
+    metrics: 'Over 1,200 preview environments spun up and safely reclaimed automatically.',
+    featured: false,
+  },
+  {
+    id: 'telemetry-guard',
+    title: 'TelemetryGuard',
+    category: 'Platform',
+    tagline: 'Unified OpenTelemetry distributed tracing and metrics ingestion hub',
+    problem: 'Student microservice projects lacked correlated telemetry, making network bottlenecks between services nearly impossible to diagnose.',
+    solution: 'Designed a plug-and-play distributed tracing collector with pre-configured Jaeger, OpenTelemetry Collector, and Grafana tempo stacks.',
+    architecture: [
+      'OpenTelemetry Collector pipeline with trace sampling',
+      'Grafana Tempo distributed trace storage backend',
+      'Custom React performance waterfall viewer',
+      'Prometheus alerting rules for p99 latency spikes'
+    ],
+    techStack: ['OpenTelemetry', 'Grafana', 'Jaeger', 'Prometheus', 'Go', 'Docker'],
+    githubUrl: 'https://github.com/xetech-club/telemetry-guard',
+    demoUrl: 'https://telemetry.xetech.dev',
+    metrics: 'Handles 50M+ trace spans/month across university research microservices.',
+    featured: false,
+  },
+  {
+    id: 'synapse-flow',
+    title: 'SynapseFlow',
+    category: 'AI',
+    tagline: 'Low-code distributed visual canvas for orchestrating LLM agent swarms',
+    problem: 'Students struggled with complex Python scripts when prototyping chains of cooperating autonomous agents.',
+    solution: 'Built an interactive node-based visual canvas where students can drag, connect, test, and deploy multi-agent workflows with state persistence.',
+    architecture: [
+      'React Flow interactive node-graph canvas interface',
+      'WebSocket state synchronization backend',
+      'Streaming token output with real-time markdown rendering',
+      'Exportable Python and Docker container configurations'
+    ],
+    techStack: ['React', 'TypeScript', 'FastAPI', 'Redis', 'LangGraph', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/xetech-club/synapse-flow',
+    demoUrl: 'https://synapse.xetech.dev',
+    metrics: 'Used by 180+ students in university AI labs to build thesis prototypes.',
+    featured: false,
+  },
+];
