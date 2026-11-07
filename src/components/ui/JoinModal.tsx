@@ -40,7 +40,7 @@ export const JoinModal: React.FC<JoinModalProps> = ({ isOpen, onClose, onSuccess
       `GitHub / Portfolio: ${github.trim() || 'Not provided'}`,
       '',
       interest.trim(),
-    ].join('\\n');
+    ].join('\n');
 
     // This site has no admissions API. Prepare a user-reviewed email rather
     // than claiming that an application was stored or accepted.
