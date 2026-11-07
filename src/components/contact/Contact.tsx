@@ -36,6 +36,7 @@ export const Contact: React.FC<ContactProps> = ({ onSendMessage }) => {
 
     // No contact API is configured for this static site; let the visitor
     // review and send the message from their own email application.
+    setIsSubmitting(true);
     window.location.href = `mailto:contact@xetech.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
     onSendMessage(name.trim());
