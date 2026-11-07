@@ -25,20 +25,20 @@ export const Contact: React.FC<ContactProps> = ({ onSendMessage }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    const subject = `XeTech inquiry: ${topic}`;
+    const body = [
+      `Name: ${name.trim()}`,
+      `Reply email: ${email.trim()}`,
+      `Topic: ${topic}`,
+      '',
+      message.trim(),
+    ].join('\\n');
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      onSendMessage(name || 'Fellow Tech Enthusiast');
-
-      setTimeout(() => {
-        setSubmitted(false);
-        setName('');
-        setEmail('');
-        setMessage('');
-      }, 3000);
-    }, 600);
+    // No contact API is configured for this static site; let the visitor
+    // review and send the message from their own email application.
+    window.location.href = `mailto:contact@xetech.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSubmitted(true);
+    onSendMessage(name.trim());
   };
 
   const toggleFaq = (index: number) => {
@@ -76,9 +76,9 @@ export const Contact: React.FC<ContactProps> = ({ onSendMessage }) => {
               {submitted ? (
                 <div className="p-6 rounded-xl bg-emerald-950/25 border border-emerald-500/30 text-center space-y-2">
                   <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto" />
-                  <h4 className="text-base font-bold text-white">Transmission Received!</h4>
+                  <h4 className="text-base font-bold text-white">Email Draft Prepared</h4>
                   <p className="text-xs text-gray-300">
-                    Thank you for reaching out. A XeTech team member will follow up at your university email shortly.
+                    Your email application should open with this message. Send the draft to contact@xetech.dev to complete your inquiry; this website does not store contact submissions.
                   </p>
                 </div>
               ) : (
@@ -148,10 +148,10 @@ export const Contact: React.FC<ContactProps> = ({ onSendMessage }) => {
                     className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-600 hover:from-pink-400 hover:to-purple-500 text-white font-semibold text-sm shadow-lg shadow-pink-500/25 transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
                   >
                     {isSubmitting ? (
-                      <span>Transmitting...</span>
+                      <span>Preparing Email Draft...</span>
                     ) : (
                       <>
-                        <span>Send Message</span>
+                        <span>Prepare Email</span>
                         <Send className="w-4 h-4" />
                       </>
                     )}
