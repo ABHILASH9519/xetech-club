@@ -7,9 +7,9 @@ export const FEATURED_EVENT: ClubEvent = {
   date: 'March 28, 2026',
   time: '10:00 AM – 4:30 PM IST',
   venue: 'Innovation Tech Lab 402 & Live Virtual Cloud Sandbox',
-  status: 'Registration Open',
+  status: 'Completed',
   featured: true,
-  registrationOpen: true,
+  registrationOpen: false,
   description: 'An intensive, hands-on production workshop designed to take students through the entire modern software delivery lifecycle. Every attendee receives dedicated cloud credits, launches real containerized services, builds CI/CD pipelines, and deploys to a live Kubernetes cluster.',
   pipeline: [
     'Cloud',
@@ -36,8 +36,8 @@ export const OTHER_EVENTS: ClubEvent[] = [
     date: 'April 18-19, 2026',
     time: '36 Hours Non-Stop',
     venue: 'Campus Auditorium & Discord Server',
-    status: 'Upcoming',
-    registrationOpen: true,
+    status: 'Completed',
+    registrationOpen: false,
     description: 'Build autonomous agent workflows, tool-using LLMs, and self-healing systems. Compete in teams of 2–4 with API compute sponsored by XeTech partner grants.',
     tags: ['Agentic AI', 'Autonomous Swarms', 'Cash Prizes', 'Mentorship'],
     speaker: {
@@ -52,8 +52,8 @@ export const OTHER_EVENTS: ClubEvent[] = [
     date: 'April 04, 2026',
     time: '2:00 PM – 5:30 PM IST',
     venue: 'Computer Center Seminar Hall',
-    status: 'Registration Open',
-    registrationOpen: true,
+    status: 'Completed',
+    registrationOpen: false,
     description: 'Deep dive into Kubernetes architecture: ingress controllers, stateful sets, custom resource definitions (CRDs), Helm charts, and cluster network policies.',
     tags: ['DevOps', 'Kubernetes', 'Live Cluster Lab', 'Intermediate'],
     speaker: {
