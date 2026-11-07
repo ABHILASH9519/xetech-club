@@ -41,6 +41,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ event, onClose, on
 
     // This static site has no registration API. Open an email draft instead
     // of displaying a false server-side registration confirmation.
+    setIsSubmitting(true);
     window.location.href = `mailto:contact@xetech.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setRegistered(true);
     onSuccess(name.trim(), event.title);
