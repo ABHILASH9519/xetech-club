@@ -30,21 +30,20 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ event, onClose, on
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    const subject = `XeTech event registration: ${event.title}`;
+    const body = [
+      `Event: ${event.title}`,
+      `Name: ${name.trim()}`,
+      `Email: ${email.trim()}`,
+      `Student ID: ${studentId.trim()}`,
+      `Laptop available: ${hasLaptop ? 'Yes' : 'No'}`,
+    ].join('\\n');
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setRegistered(true);
-      onSuccess(name || 'Fellow Engineer', event.title);
-
-      setTimeout(() => {
-        setRegistered(false);
-        setName('');
-        setEmail('');
-        setStudentId('');
-        onClose();
-      }, 1500);
-    }, 600);
+    // This static site has no registration API. Open an email draft instead
+    // of displaying a false server-side registration confirmation.
+    window.location.href = `mailto:contact@xetech.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setRegistered(true);
+    onSuccess(name.trim(), event.title);
   };
 
   return (
@@ -68,9 +67,9 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ event, onClose, on
             <div className="w-16 h-16 rounded-full bg-fuchsia-500/20 border border-fuchsia-400 flex items-center justify-center text-fuchsia-400 mb-4 animate-bounce">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Seat Reserved!</h3>
+            <h3 className="text-2xl font-bold text-white mb-2">Email Draft Prepared</h3>
             <p className="text-gray-300 text-sm max-w-xs mx-auto">
-              You are officially registered for <span className="text-fuchsia-300 font-semibold">{event.title}</span>. Workshop instructions and credentials will be sent to your email.
+              Your email application should open with your registration details for <span className="text-fuchsia-300 font-semibold">{event.title}</span>. Send that email to complete your request; this website does not store registrations.
             </p>
           </div>
         ) : (
@@ -170,7 +169,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ event, onClose, on
                     <span>Allocating Cloud Seat...</span>
                   ) : (
                     <>
-                      <span>Confirm Free Seat Registration</span>
+                      <span>Prepare Registration Email</span>
                       <Send className="w-4 h-4" />
                     </>
                   )}
@@ -178,7 +177,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ event, onClose, on
               </div>
 
               <p className="text-[11px] text-gray-500 text-center">
-                Dedicated sandbox cloud credentials will be issued upon check-in.
+                Your registration request is not submitted until you send the email draft.
               </p>
             </form>
           </>
