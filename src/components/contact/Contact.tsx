@@ -32,7 +32,7 @@ export const Contact: React.FC<ContactProps> = ({ onSendMessage }) => {
       `Topic: ${topic}`,
       '',
       message.trim(),
-    ].join('\\n');
+    ].join('\n');
 
     // No contact API is configured for this static site; let the visitor
     // review and send the message from their own email application.
