@@ -55,7 +55,7 @@ export function App() {
 
   const handleContactSent = (sender: string) => {
     addToast(
-      'Email draft prepared',
+      `Email draft prepared for ${sender}`,
       `Your email application was opened. Send the draft to contact@xetech.dev to submit your inquiry.`,
       'success'
     );
