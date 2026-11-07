@@ -31,8 +31,8 @@ export function App() {
 
   const handleJoinSuccess = (name: string, domain: string) => {
     addToast(
-      `Welcome to XeTech, ${name}!`,
-      `Your application for the ${domain} cohort was recorded. Orientation details sent to your email.`,
+      `Application email prepared for ${name}`,
+      `An email draft for the ${domain} cohort was opened. Send it to contact@xetech.dev to submit your application.`,
       'success'
     );
   };
