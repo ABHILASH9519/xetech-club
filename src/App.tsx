@@ -55,8 +55,8 @@ export function App() {
 
   const handleContactSent = (sender: string) => {
     addToast(
-      'Transmission Dispatched',
-      `Thank you, ${sender}. A member of the XeTech student team will respond within 24 hours.`,
+      'Email draft prepared',
+      `Your email application was opened. Send the draft to contact@xetech.dev to submit your inquiry.`,
       'success'
     );
   };
