@@ -31,22 +31,22 @@ export const JoinModal: React.FC<JoinModalProps> = ({ isOpen, onClose, onSuccess
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    const subject = `XeTech Club application: ${domain}`;
+    const body = [
+      `Name: ${name.trim()}`,
+      `Email: ${email.trim()}`,
+      `Year: ${year}`,
+      `Domain: ${domain}`,
+      `GitHub / Portfolio: ${github.trim() || 'Not provided'}`,
+      '',
+      interest.trim(),
+    ].join('\\n');
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      onSuccess(name || 'Fellow Builder', domain);
-
-      setTimeout(() => {
-        setSubmitted(false);
-        setName('');
-        setEmail('');
-        setGithub('');
-        setInterest('');
-        onClose();
-      }, 1500);
-    }, 600);
+    // This site has no admissions API. Prepare a user-reviewed email rather
+    // than claiming that an application was stored or accepted.
+    window.location.href = `mailto:contact@xetech.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSubmitted(true);
+    onSuccess(name.trim(), domain);
   };
 
   return (
@@ -75,9 +75,9 @@ export const JoinModal: React.FC<JoinModalProps> = ({ isOpen, onClose, onSuccess
             <div className="w-16 h-16 rounded-full bg-fuchsia-500/20 border border-fuchsia-400 flex items-center justify-center text-fuchsia-400 mb-4 animate-bounce">
               <CheckCircle className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Welcome to XeTech Club!</h3>
+            <h3 className="text-2xl font-bold text-white mb-2">Application Email Prepared</h3>
             <p className="text-gray-300 text-sm max-w-xs mx-auto">
-              Your application has been received. Check your inbox for the Discord invitation and orientation sandbox access.
+              Your email application should open with your details. Send the draft to contact@xetech.dev to submit your application. This website does not store applications or issue invitations.
             </p>
           </div>
         ) : (
@@ -196,10 +196,10 @@ export const JoinModal: React.FC<JoinModalProps> = ({ isOpen, onClose, onSuccess
                   className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-600 hover:from-pink-400 hover:to-purple-500 text-white font-semibold text-sm shadow-lg shadow-pink-500/25 hover:shadow-fuchsia-500/35 transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
                 >
                   {isSubmitting ? (
-                    <span>Submitting Application...</span>
+                    <span>Preparing Email Draft...</span>
                   ) : (
                     <>
-                      <span>Submit Application</span>
+                      <span>Prepare Application Email</span>
                       <Send className="w-4 h-4" />
                     </>
                   )}
@@ -207,7 +207,7 @@ export const JoinModal: React.FC<JoinModalProps> = ({ isOpen, onClose, onSuccess
               </div>
 
               <p className="text-[11px] text-gray-500 text-center">
-                XeTech is 100% free and student-led. We do not share your details with commercial third parties.
+                Your details are placed in an email draft for you to review. Nothing is submitted until you send it.
               </p>
             </form>
           </>
