@@ -39,8 +39,8 @@ export function App() {
 
   const handleEventRegistered = (attendee: string, eventTitle: string) => {
     addToast(
-      `Seat Reserved for ${attendee}`,
-      `You're registered for "${eventTitle}". Sandbox credentials will be assigned before the session.`,
+      `Registration email prepared for ${attendee}`,
+      `An email draft for "${eventTitle}" was opened. Send it to contact@xetech.dev to submit your request.`,
       'success'
     );
   };
