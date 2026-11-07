@@ -37,7 +37,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ event, onClose, on
       `Email: ${email.trim()}`,
       `Student ID: ${studentId.trim()}`,
       `Laptop available: ${hasLaptop ? 'Yes' : 'No'}`,
-    ].join('\\n');
+    ].join('\n');
 
     // This static site has no registration API. Open an email draft instead
     // of displaying a false server-side registration confirmation.
