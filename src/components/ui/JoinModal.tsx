@@ -44,6 +44,7 @@ export const JoinModal: React.FC<JoinModalProps> = ({ isOpen, onClose, onSuccess
 
     // This site has no admissions API. Prepare a user-reviewed email rather
     // than claiming that an application was stored or accepted.
+    setIsSubmitting(true);
     window.location.href = `mailto:contact@xetech.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
     onSuccess(name.trim(), domain);
